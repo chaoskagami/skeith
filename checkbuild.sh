@@ -37,6 +37,8 @@ fi
 
 make fw_folder=skeith name=Skeith release
 
+rm -rf ../rel
+
 mv rel ../rel
 
 REV=$(git rev-parse HEAD)
