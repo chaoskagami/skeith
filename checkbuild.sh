@@ -47,6 +47,6 @@ git add rel
 
 git commit -m "Automated - build succeeded: $REV"
 
-git push
+git push origin master
 
 exit 0
