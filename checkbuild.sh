@@ -35,7 +35,7 @@ else
     exit 1
 fi
 
-make fw_folder=skeith name=Skeith release
+make fw_folder=skeith fw_name=Skeith release
 
 rm -rf ../rel
 
