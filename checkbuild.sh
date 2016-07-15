@@ -30,6 +30,7 @@ if [ $LOCAL = $REMOTE ]; then
 elif [ $LOCAL = $BASE ]; then
     echo "Need to pull"
     git pull
+	git submodule update --init --recursive
 else
     echo "Diverged"
     exit 1

@@ -5,5 +5,5 @@
 
 while true; do
 	./checkbuild.sh 2>&1 >/dev/null
-	sleep 60m
+	sleep 30m
 done
