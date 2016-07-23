@@ -49,7 +49,6 @@ make
 
 cd out
 
-rm ../../rel/*
 zip -r9 ../../rel/release.zip *
 sha512sum ../../rel/release.zip | sed 's|../../rel/||g' > ../../rel/release.zip.sha512
 
