@@ -11,8 +11,6 @@ fi
 
 cd corbenik
 
-make clean
-
 # ==============================================
 
 git remote update
@@ -36,11 +34,26 @@ else
     exit 1
 fi
 
-make fw_folder=skeith fw_name=Skeith release
+unset CC
+unset CXX
+unset LD
+unset CFLAGS
+unset CXXFLAGS
+unset LDFLAGS
+export PATH=$PATH:$DEVKITARM/bin
 
-rm -rf ../rel
+git clean -fxd
+./autogen.sh
+./configure --host=arm-none-eabi --prefix=/skeith
+make
 
-mv rel ../rel
+cd out
+
+rm ../../rel/*
+zip -r9 ../../rel/release.zip *
+sha512sum ../../rel/release.zip | sed 's|../../rel/||g' > ../../rel/release.zip.sha512
+
+cd ..
 
 REV=$(git rev-parse HEAD)
 
