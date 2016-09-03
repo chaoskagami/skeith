@@ -43,6 +43,7 @@ unset LDFLAGS
 export PATH=$PATH:$DEVKITARM/bin
 
 git clean -fxd
+git submodule foreach git clean -fxd
 ./autogen.sh
 ./configure --host=arm-none-eabi --prefix=/skeith
 make
